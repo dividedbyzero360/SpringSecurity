@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.luv2code</groupId>
@@ -10,14 +10,15 @@
 	<name>spring-security-demo</name>
 
 	<properties>
-		<springframework.version>5.0.2.RELEASE</springframework.version>
-		<springsecurity.version>5.0.0.RELEASE</springsecurity.version>
+		<springframework.version>5.2.0.RELEASE</springframework.version>
+		<springsecurity.version>5.2.0.RELEASE</springsecurity.version>
 
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
 	<dependencies>
+
 
 		<!-- Spring MVC support -->
 		<dependency>
@@ -28,18 +29,34 @@
 
 		<!-- Spring Security -->
 		<!-- spring-security-web and spring-security-config -->
-
+		
 		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-web</artifactId>
-			<version>${springsecurity.version}</version>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${springsecurity.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${springsecurity.version}</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-config</artifactId>
-			<version>${springsecurity.version}</version>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.2.0.RELEASE</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>5.2.0.RELEASE</version>
+		</dependency>
+
+
 
 		<!-- Servlet, JSP and JSTL support -->
 		<dependency>
@@ -67,21 +84,37 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.17</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.4</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<!-- TO DO: Add support for Maven WAR Plugin -->
 
 	<build>
 		<finalName>spring-security-demo</finalName>
-
+	
 		<pluginManagement>
 			<plugins>
 				<plugin>
 					<!-- Add Maven coordinates (GAV) for: maven-war-plugin -->
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-war-plugin</artifactId>
-					<version>3.2.0</version>
-				</plugin>
+				    <groupId>org.apache.maven.plugins</groupId>
+				    <artifactId>maven-war-plugin</artifactId>
+				    <version>3.2.0</version>					
+				</plugin>						
 			</plugins>
 		</pluginManagement>
 	</build>
